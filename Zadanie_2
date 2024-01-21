@@ -1,0 +1,15 @@
+import nltk
+import random
+import string
+
+
+def generatePassword():
+    password = ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation, k=9))
+    english_vocab = set(w.lower() for w in nltk.corpus.words.words())
+    if password not in english_vocab:
+        print(password)
+
+
+if __name__ == '__main__':
+    nltk.download('words')
+    print(generatePassword())
