@@ -1,0 +1,20 @@
+import base64
+
+
+def encode64(string):
+    encodedString = base64.b64encode(string)
+    print('Oryginalny ciag znakow: '.encode() + string)
+    print('Zakodowany ciag znakow: '.encode() + encodedString)
+    return encodedString
+
+
+def decode64(string):
+    decodedString = base64.b64decode(string)
+    print('Odkodowany ciag znakow: '.encode() + decodedString)
+    return decodedString
+
+
+if __name__ == '__main__':
+    string = b'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis tincidunt orci. Pellentesque turpis elit, malesuada in ipsum vel, gravida commodo dolor. Donec tortor elit, imperdiet id tempor vel, dictum et lectus. Ut gravida justo ac ipsum facilisis hendrerit. Morbi laoreet, odio sed semper tempus, ipsum odio ornare lacus, vitae pulvinar ex diam in turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas pharetra fringilla placerat. Praesent eget ligula non tortor consectetur iaculis. Aenean quis auctor neque, at accumsan metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus gravida elit sit amet eros euismod, id tempor ligula varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In lacinia orci a arcu scelerisque vehicula. Aliquam nisl arcu, scelerisque at imperdiet a, lacinia ut magna.'
+    encoded = encode64(string)
+    decode64(encoded)
